@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         options: {
           hostname: '*',
           port: 9000,
-          base: 'htdocs'
+          base: ''
         }
       }
     },
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'htdocs/css/style-min.css': 'assets/sass/style.scss'
+          'css/style-min.css': 'assets/sass/style.scss'
         }
       }
     },
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           expand: true
         },
         files: {
-          'htdocs/js/common-min.js': [
+          'js/common-min.js': [
             'assets/js/common.js',
             'assets/js/unique.js'
           ]
