@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     sass: {
       target: {
         options: {
-          style: 'expanded'
+          style: 'compressed'
         },
         files: {
           'css/style-min.css': 'assets/sass/style.scss'
@@ -26,6 +26,7 @@ module.exports = function(grunt) {
     uglify: {
       target: {
         options: {
+          wrap: 'demo',
           expand: true
         },
         files: {
