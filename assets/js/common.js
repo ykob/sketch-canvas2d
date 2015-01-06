@@ -1,5 +1,5 @@
-var width = window.innerWidth;
-var height = window.innerHeight;
+var width  = document.body.clientWidth;
+var height = document.body.clientHeight;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var fps = 60;
