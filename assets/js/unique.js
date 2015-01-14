@@ -54,28 +54,28 @@ renderloop();
 
 // document.addEventListener('click', function(event) {
 //   event.preventDefault();
-//   var x = event.x;
-//   var y = event.y;
+//   var x = event.x * 2;
+//   var y = event.y * 2;
 //   animeObjArr.push(new animeObj(x, y));
 // }, false);
 
 document.addEventListener('mousemove', function(event) {
   event.preventDefault();
-  var x = event.x;
-  var y = event.y;
+  var x = event.x * 2;
+  var y = event.y * 2;
   animeObjArr.push(new animeObj(x, y));
 }, false);
 
 // document.addEventListener('touchstart', function(event) {
 //   event.preventDefault();
-//   var x = event.touches[0].pageX;
-//   var y = event.touches[0].pageY;
+//   var x = event.touches[0].pageX * 2;
+//   var y = event.touches[0].pageY * 2;
 //   animeObjArr.push(new animeObj(x, y));
 // }, false);
 
 // document.addEventListener('touchmove', function(event) {
   // event.preventDefault();
-//   var x = event.touches[0].pageX;
-//   var y = event.touches[0].pageY;
+//   var x = event.touches[0].pageX * 2;
+//   var y = event.touches[0].pageY * 2;
 //   animeObjArr.push(new animeObj(x, y));
 // }, false);

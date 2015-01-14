@@ -1,5 +1,5 @@
-var width  = document.body.clientWidth;
-var height = document.body.clientHeight;
+var width  = document.body.clientWidth * 2;
+var height = document.body.clientHeight * 2;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var fps = 60;
@@ -25,11 +25,13 @@ var debounce = function(object, eventType, callback){
 };
 
 var canvasResize = function() {
-  width  = document.body.clientWidth;
-  height = document.body.clientHeight;
+  width  = document.body.clientWidth * 2;
+  height = document.body.clientHeight * 2;
 
   canvas.width = width;
   canvas.height = height;
+  canvas.style.width = width / 2 + 'px';
+  canvas.style.height = height / 2 + 'px';
 };
 
 debounce(window, 'resize', function(){
