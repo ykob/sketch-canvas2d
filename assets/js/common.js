@@ -13,6 +13,12 @@ var getRadian = function(degrees) {
   return degrees * Math.PI / 180;
 };
 
+var getDistance = function(p1x, p1y, p2x, p2y) {
+  var distX = p1x - p2x;
+  var distY = p1y - p2y;
+  return Math.sqrt(distX * distX + distY * distY);
+};
+
 var debounce = function(object, eventType, callback){
   var timer;
 
