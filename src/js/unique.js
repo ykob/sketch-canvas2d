@@ -3,21 +3,19 @@ var lastTimeRender = +new Date();
 
 var animeObj = function(x, y) {
   this.t = 0;
-  this.v = 10;
   this.x = x;
   this.y = y;
 };
 
 animeObj.prototype.move = function() {
   this.t += frameTime / 1000;
-  this.x = this.x + this.v * this.t;
-  this.y = this.y + this.v * this.t;
 };
 
 animeObj.prototype.render = function() {
   ctx.beginPath();
   ctx.arc(this.x, this.y, 10, 0, Math.PI / 180, true);
   ctx.fill();
+  ctx.closePath();
 };
 
 animeObj.prototype.isLast = function() {
@@ -30,25 +28,25 @@ animeObj.prototype.isLast = function() {
 
 var render = function() {
   ctx.clearRect(0, 0, width, height);
-  
+
   for (var i = 0; i < animeObjArr.length; i++) {
     animeObjArr[i].move();
     animeObjArr[i].render();
     if (animeObjArr[i].isLast()) {
-      animeObjArr.splice(i, 1);
+      animeObjArr.splice(i,1);
     }
   }
 };
 
 var renderloop = function() {
-    var now = +new Date();
-    requestAnimationFrame(renderloop);
+  var now = +new Date();
+  requestAnimationFrame(renderloop);
 
-    if (now - lastTimeRender < frameTime) {
-      return;
-    }
-    render();
-    lastTimeRender = +new Date();
+  if (now - lastTimeRender < frameTime) {
+    return;
+  }
+  render();
+  lastTimeRender = +new Date();
 };
 renderloop();
 
