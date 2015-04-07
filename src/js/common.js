@@ -26,10 +26,10 @@ var getDistance = function(p1x, p1y, p2x, p2y) {
 var debounce = function(object, eventType, callback){
   var timer;
 
-  object.addEventListener(eventType, function() {
+  object.addEventListener(eventType, function(event) {
     clearTimeout(timer);
     timer = setTimeout(function(){
-      callback();
+      callback(event);
     }, 500);
   }, false);
 };
@@ -44,7 +44,7 @@ var canvasResize = function() {
   canvas.style.height = height / 2 + 'px';
 };
 
-debounce(window, 'resize', function(){
+debounce(window, 'resize', function(event){
   canvasResize();
 });
 
