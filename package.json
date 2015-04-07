@@ -1,7 +1,7 @@
 {
-  "name": "my-gulp-set",
+  "name": "demo-template-canvas",
   "version": "0.0.0",
-  "description": "it's the format of the gulp that I have customized.",
+  "description": "it's the format of demo with html canvas.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "https://github.com/ykob/my-gulp-set.git"
   },
   "keywords": [
-    "gulp"
+    "canvas"
   ],
   "author": "yoichi kobayashi",
   "license": "BSD-2-Clause",
