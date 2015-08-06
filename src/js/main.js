@@ -1,13 +1,13 @@
-var Get = require('./get');
-var get = new Get();
+var Util = require('./util');
+var util = new Util();
 var debounce = require('./debounce');
 
-var bodyWidth = document.body.clientWidth;
-var bodyHeight = document.body.clientHeight;
+var body_width = document.body.clientWidth;
+var body_height = document.body.clientHeight;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var fps = 60;
-var lastTimeRender = +new Date();
+var last_time_render = Date.now();
 
 var movers = [];
 
@@ -21,27 +21,27 @@ var init = function() {
 };
 
 var render = function() {
-  ctx.clearRect(0, 0, bodyWidth, bodyHeight);
+  ctx.clearRect(0, 0, body_width, body_height);
 };
 
 var renderloop = function() {
-  var now = +new Date();
+  var now = Date.now();
   requestAnimationFrame(renderloop);
 
-  if (now - lastTimeRender > 1000 / fps) {
+  if (now - last_time_render > 1000 / fps) {
     render();
-    lastTimeRender = +new Date();
+    last_time_render = Date.now();
   }
 };
 
 var resizeCanvas = function() {
-  bodyWidth  = document.body.clientWidth * 2;
-  bodyHeight = document.body.clientHeight * 2;
+  body_width  = document.body.clientWidth * 2;
+  body_height = document.body.clientHeight * 2;
 
-  canvas.width = bodyWidth;
-  canvas.height = bodyHeight;
-  canvas.style.width = bodyWidth / 2 + 'px';
-  canvas.style.height = bodyHeight / 2 + 'px';
+  canvas.width = body_width;
+  canvas.height = body_height;
+  canvas.style.width = body_width / 2 + 'px';
+  canvas.style.height = body_height / 2 + 'px';
 };
 
 var setEvent = function () {
