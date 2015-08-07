@@ -1,15 +1,14 @@
 var Util = require('./util');
 var util = new Util();
+var Vector2 = require('./vector2');
 var debounce = require('./debounce');
 
-var body_width = document.body.clientWidth;
-var body_height = document.body.clientHeight;
+var body_width  = document.body.clientWidth * 2;
+var body_height = document.body.clientHeight * 2;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var fps = 60;
 var last_time_render = Date.now();
-
-var movers = [];
 
 var init = function() {
   renderloop();
