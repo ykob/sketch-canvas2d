@@ -7,8 +7,7 @@ var body_width  = document.body.clientWidth * 2;
 var body_height = document.body.clientHeight * 2;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-var fps = 60;
-var last_time_render = Date.now();
+var last_time_xxx = Date.now();
 
 var init = function() {
   renderloop();
@@ -25,12 +24,13 @@ var render = function() {
 
 var renderloop = function() {
   var now = Date.now();
+  
   requestAnimationFrame(renderloop);
-
-  if (now - last_time_render > 1000 / fps) {
-    render();
-    last_time_render = Date.now();
-  }
+  render();
+  // if (now - last_time_xxx > 1000) {
+  //   function_name();
+  //   last_time_xxx = Date.now();
+  // }
 };
 
 var resizeCanvas = function() {
