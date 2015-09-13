@@ -8,6 +8,10 @@ var body_height = document.body.clientHeight * 2;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var last_time_xxx = Date.now();
+var vector_touch_start = new Vector2();
+var vector_touch_move = new Vector2();
+var vector_touch_end = new Vector2();
+var is_touched = false;
 
 var init = function() {
   renderloop();
@@ -45,12 +49,20 @@ var resizeCanvas = function() {
 
 var setEvent = function () {
   var eventTouchStart = function(x, y) {
+    vector_touch_start.set(x, y);
+    is_touched = true;
   };
   
   var eventTouchMove = function(x, y) {
+    vector_touch_move.set(x, y);
+    if (is_touched) {
+      
+    }
   };
   
   var eventTouchEnd = function(x, y) {
+    vector_touch_end.set(x, y);
+    is_touched = false;
   };
 
   canvas.addEventListener('contextmenu', function (event) {
@@ -63,12 +75,12 @@ var setEvent = function () {
 
   canvas.addEventListener('mousedown', function (event) {
     event.preventDefault();
-    eventTouchStart(event.clientX, event.clientY);
+    eventTouchStart(event.clientX * 2, event.clientY * 2);
   });
 
   canvas.addEventListener('mousemove', function (event) {
     event.preventDefault();
-    eventTouchMove(event.clientX, event.clientY);
+    eventTouchMove(event.clientX * 2, event.clientY * 2);
   });
 
   canvas.addEventListener('mouseup', function (event) {
@@ -78,12 +90,12 @@ var setEvent = function () {
 
   canvas.addEventListener('touchstart', function (event) {
     event.preventDefault();
-    eventTouchStart(event.touches[0].clientX, event.touches[0].clientY);
+    eventTouchStart(event.touches[0].clientX * 2, event.touches[0].clientY * 2);
   });
 
   canvas.addEventListener('touchmove', function (event) {
     event.preventDefault();
-    eventTouchMove(event.touches[0].clientX, event.touches[0].clientY);
+    eventTouchMove(event.touches[0].clientX * 2, event.touches[0].clientY * 2);
   });
 
   canvas.addEventListener('touchend', function (event) {
