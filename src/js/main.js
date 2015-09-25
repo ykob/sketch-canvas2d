@@ -2,6 +2,7 @@ var Util = require('./util');
 var Vector2 = require('./vector2');
 var Force = require('./force');
 var debounce = require('./debounce');
+var Mover = require('./mover');
 
 var body_width  = document.body.clientWidth * 2;
 var body_height = document.body.clientHeight * 2;
@@ -13,6 +14,9 @@ var vector_touch_move = new Vector2();
 var vector_touch_end = new Vector2();
 var is_touched = false;
 
+var movers = [];
+var gravity =  new Vector2(0, 1);
+
 var init = function() {
   renderloop();
   setEvent();
@@ -20,10 +24,26 @@ var init = function() {
   debounce(window, 'resize', function(event){
     resizeCanvas();
   });
+  movers.push(new Mover());
+  movers[0].init(new Vector2(body_width / 2, 0), 30);
+  movers[0].anchor.set(body_width / 2, body_height / 2);
+};
+
+var updateMover = function() {
+  for (var i = 0; i < movers.length; i++) {
+    var mover = movers[i];
+    
+    mover.hook(100);
+    mover.applyDragForce();
+    mover.updateVelocity();
+    mover.updatePosition();
+    mover.draw(ctx);
+  }
 };
 
 var render = function() {
   ctx.clearRect(0, 0, body_width, body_height);
+  updateMover();
 };
 
 var renderloop = function() {

@@ -3,7 +3,6 @@ var Vector2 = require('./vector2');
 var exports = {
   friction: function(acceleration, mu, normal, mass) {
     var force = acceleration.clone();
-
     if (!normal) normal = 1;
     if (!mass) mass = 1;
     force.multiplyScalar(-1);
@@ -18,9 +17,9 @@ var exports = {
     force.multiplyScalar(acceleration.length() * value);
     return force;
   },
-  hook: function(v_velocity, v_anchor, k) {
-    var force = v_velocity.clone().sub(v_anchor);
-    var distance = force.length();
+  hook: function(velocity, anchor, rest_length, k) {
+    var force = velocity.clone().sub(anchor);
+    var distance = force.length() - rest_length;
     if (distance > 0) {
       force.normalize();
       force.multiplyScalar(-1 * k * distance);
