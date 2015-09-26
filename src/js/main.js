@@ -10,7 +10,7 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var last_time_xxx = Date.now();
 var vector_touch_start = new Vector2();
-var vector_touch_move = new Vector2(body_width / 2, 0);
+var vector_touch_move = new Vector2(body_width / 4, 0);
 var vector_touch_end = new Vector2();
 var is_touched = false;
 
@@ -64,6 +64,7 @@ var updateMover = function() {
   }
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
+  ctx.strokeStyle = '#222222';
   ctx.stroke();
 };
 
