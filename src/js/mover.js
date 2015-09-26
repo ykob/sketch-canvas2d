@@ -15,7 +15,6 @@ var exports = function(){
     this.g = 0;
     this.b = 0;
     this.a = 1;
-    this.k = 0.1;
     this.time = 0;
     this.is_active = false;
   };
@@ -47,12 +46,12 @@ var exports = function(){
       var friction = Force.friction(this.acceleration, 0.1);
       this.applyForce(friction);
     },
-    applyDragForce: function() {
-      var drag = Force.drag(this.acceleration, 0.1);
+    applyDragForce: function(value) {
+      var drag = Force.drag(this.acceleration, value);
       this.applyForce(drag);
     },
-    hook: function(rest_length) {
-      var force = Force.hook(this.velocity, this.anchor, rest_length, this.k);
+    hook: function(rest_length, k) {
+      var force = Force.hook(this.velocity, this.anchor, rest_length, k);
       this.applyForce(force);
     },
     direct: function(vector) {

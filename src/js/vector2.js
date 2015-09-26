@@ -59,8 +59,8 @@ var exports = function(){
       return this;
     },
     divideScalar: function (s) {
-      this.x /= s;
-      this.y /= s;
+      if (this.x !== 0 && s !== 0) this.x /= s;
+      if (this.y !== 0 && s !== 0) this.y /= s;
       return this;
     },
     min: function (v) {

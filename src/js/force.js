@@ -20,13 +20,13 @@ var exports = {
   hook: function(velocity, anchor, rest_length, k) {
     var force = velocity.clone().sub(anchor);
     var distance = force.length() - rest_length;
-    if (distance > 0) {
+    //if (distance > 0) {
       force.normalize();
       force.multiplyScalar(-1 * k * distance);
       return force;
-    } else {
-      return new Vector2();
-    }
+    // } else {
+    //   return new Vector2();
+    // }
   }
 };
 
