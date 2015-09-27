@@ -10,13 +10,9 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var last_time_xxx = Date.now();
 var vector_touch_start = new Vector2();
-var vector_touch_move = new Vector2(body_width / 4, 0);
+var vector_touch_move = new Vector2();
 var vector_touch_end = new Vector2();
 var is_touched = false;
-
-var movers_num = 100;
-var movers = [];
-var gravity =  new Vector2(0, 16);
 
 var init = function() {
   renderloop();
@@ -25,52 +21,10 @@ var init = function() {
   debounce(window, 'resize', function(event){
     resizeCanvas();
   });
-  pushMover();
-};
-
-var pushMover = function() {
-  for (var i = 0; i < movers_num; i++) {
-    movers[i] = new Mover();
-    movers[i].init(new Vector2(0, 0), 1);
-    if (i > 0) {
-      movers[i].anchor.copy(movers[i - 1].position);
-    }
-  }
-};
-
-var updateMover = function() {
-  ctx.beginPath();
-  for (var i = 0; i < movers.length; i++) {
-    var mover = movers[i];
-    var mover_previous = null;
-    
-    mover.applyDragForce(0.8);
-    if (i === 0) {
-      mover.velocity.copy(vector_touch_move);
-    } else {
-      mover_previous = movers[i - 1];
-      mover.anchor.copy(mover_previous.position);
-      mover.applyForce(gravity);
-      mover.hook(1, 0.5);
-    }
-    mover.updateVelocity();
-    mover.updatePosition();
-    ctx.lineWidth = 50;
-    if (i > 0) {
-      ctx.lineTo(mover.position.x, mover.position.y);
-    } else {
-      ctx.moveTo(mover.position.x, mover.position.y);
-    }
-  }
-  ctx.lineCap = 'round';
-  ctx.lineJoin = 'round';
-  ctx.strokeStyle = '#222222';
-  ctx.stroke();
 };
 
 var render = function() {
   ctx.clearRect(0, 0, body_width, body_height);
-  updateMover();
 };
 
 var renderloop = function() {
