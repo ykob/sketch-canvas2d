@@ -1,4 +1,4 @@
-# demo-template-canvas
+# template-canvas2d
 
 canvasを使ったdemo用のテンプレート。
 
