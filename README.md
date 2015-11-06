@@ -1,6 +1,7 @@
-# demo-template-canvas
+# sketch-canvas2d
 
-canvasを使ったdemo用のテンプレート。
+it's my personal sketch that is used canvas2d.  
+http://ykob.github.io/sketch-canvas2d/
 
 ## npm install
 
