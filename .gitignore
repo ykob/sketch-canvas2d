@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+ignore
+index.html
+css/**/*
+js/**/*
+img/**/*
+dst/css/**/*
+dst/js/**/*
+dst/**/*.json
+dst/**/*.html
+build/**/*
+.sass-cache
