@@ -4,7 +4,6 @@ html {
 body {
   min-width: $min-width;
   min-height: 100%;
-  overflow-y: scroll;
   font-family: $font-jp;
 }
 ::selection      {background: rgba(57, 168, 0, 0.2);}
