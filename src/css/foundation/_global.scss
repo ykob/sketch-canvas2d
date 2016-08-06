@@ -2,9 +2,9 @@ html {
   height: 100%;
 }
 body {
-  min-width: $min-width;
   min-height: 100%;
   font-family: $font-jp;
 }
-::selection      {background: rgba(57, 168, 0, 0.2);}
-::-moz-selection {background: rgba(57, 168, 0, 0.2);}
+::selection {
+  background: rgba(0, 0, 0, 0.5);
+}
