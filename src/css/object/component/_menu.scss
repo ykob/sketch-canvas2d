@@ -24,10 +24,10 @@
       top: 50%; right: 0; left: 0;
       background-color: #000;
       &--top {
-        transform: translate(0, -5px);
+        transform: translate3d(0, -5px, 0);
       }
       &--bottom {
-        transform: translate(0, 5px);
+        transform: translate3d(0, 5px, 0);
       }
     }
   }
@@ -36,5 +36,31 @@
   //
   &__list {
     height: 0;
+  }
+  &__btn {
+    perspective: none;
+    &-line {
+      transition-duration: 0.3s;
+    }
+  }
+  //
+  //  Interaction Init
+  //
+  &__btn {
+    &.menu-opened & {
+      &-line {
+        background-color: #fff;
+        &--top {
+          transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 45deg) scale(0.8);
+        }
+        &--middle {
+          transform: scale(0);
+        }
+        &--bottom {
+          transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, -45deg) scale(0.8);
+        }
+      }
+    }
+
   }
 }

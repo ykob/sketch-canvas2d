@@ -1,0 +1,17 @@
+.c-page {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #fff;
+  //
+  //  Interaction Init
+  //
+  transition-duration: 0.6s;
+  transition-timing-function: $easeOutCirc;
+  //
+  //  Interaction
+  //
+  &.menu-opened {
+    transition-timing-function: $easeOutCirc;
+    transform: translate3d(320px, 0, 0) rotate3d(0, 1, 0.4, -14deg);
+  }
+}

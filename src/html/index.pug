@@ -10,19 +10,20 @@ html(lang="ja")
   head
     include ./modules/_head.pug
   body
-    .c-sketch-summry
-      h1.c-sketch-summry__head
-        |#{title}
-      p.c-sketch-summry__description
-        |#{description}
-      .c-sketch-summry__about-website
-        h2.c-sketch-summry__sub-head
-          |sketch of canvas2D
-        p.c-sketch-summry__view-source
-          a(href="https://github.com/ykob/sketch-canvas2d")
-            |view source
-    .c-stage
-      canvas.c-stage__canvas
+    .c-page
+      .c-sketch-summry
+        h1.c-sketch-summry__head
+          |#{title}
+        p.c-sketch-summry__description
+          |#{description}
+        .c-sketch-summry__about-website
+          h2.c-sketch-summry__sub-head
+            |sketch of canvas2D
+          p.c-sketch-summry__view-source
+            a(href="https://github.com/ykob/sketch-canvas2d")
+              |view source
+      .c-stage
+        canvas.c-stage__canvas
     .c-menu
       .c-menu__list
       .c-menu__btn
