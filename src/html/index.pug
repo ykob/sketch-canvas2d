@@ -1,15 +1,26 @@
 -
-  var meta_title = '';
-  var meta_keywords = '';
-  var meta_description = '';
-  var meta_path = "/";
-  var meta_ogp_img = "ogp.jpg"
+  var title = 'demo';
+  var keywords = '';
+  var description = 'description about this demo.';
+  var path = "/";
+  var ogp_img = "ogp.jpg"
 
 doctype html
 html(lang="ja")
   head
     include ./modules/_head.pug
-  body.index
-    .l-stage
-      canvas.l-stage__canvas
+  body
+    .c-sketch-summry
+      h1.c-sketch-summry__head
+        |#{title}
+      p.c-sketch-summry__description
+        |#{description}
+      .c-sketch-summry__about-website
+        h2.c-sketch-summry__sub-head
+          |sketch of canvas2D
+        p.c-sketch-summry__view-source
+          a(href="https://github.com/ykob/sketch-canvas2d")
+            |view source
+    .c-stage
+      canvas.c-stage__canvas
     include ./modules/_script.pug

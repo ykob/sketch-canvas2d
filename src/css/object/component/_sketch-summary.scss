@@ -1,0 +1,29 @@
+.c-sketch-summry {
+  line-height: 1;
+  position: absolute;
+  bottom: 2%; left: 2%;
+  z-index: 100;
+  &__head {
+    margin: 0;
+    @include fontSize(40);
+    font-weight: 400;
+  }
+  &__description {
+    margin: 1rem 0 0;
+  }
+  &__about-website {
+    margin-top: 2rem;
+    @include fontSize(12);
+  }
+  &__sub-head {
+    display: inline-block;
+    margin: 0;
+    @include fontSize(12);
+    font-weight: 400;
+  }
+  &__view-source {
+    display: inline-block;
+    margin: 0 0 0 0.2rem;
+    @include fontSize(12);
+  }
+}
