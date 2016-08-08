@@ -1,7 +1,7 @@
 export default class Stage {
   constructor() {
-    this.$stage = $('.l-stage');
-    this.$canvas = $('.l-stage__canvas');
+    this.$stage = $('.c-stage');
+    this.$canvas = $('.c-stage__canvas');
 
     this.resize();
     this.setEvent();
