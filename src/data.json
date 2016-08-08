@@ -1,17 +1,25 @@
 {
   "meta": {
-    "domain": "http://www.tplh.net",
-    "website_name": "website name",
-    "keywords": "keyword base"
+    "domain": "http://ykob.github.io/sketch-canvas2d/",
+    "website_name": "sketch of Canvas2D",
+    "keywords": "JavaScript, Canvas2D"
   },
-  "pages": {
+  "sketches": {
     "index": {
-      "title": "page title",
-      "keywords": "keyword1, keyword2",
-      "description": "page description",
+      "title": "",
+      "keywords": "",
+      "description": "it's my personal sketch that is used canvas2d.",
       "path": "/",
-      "ogp_description": "page ogp description",
+      "ogp_description": "it's my personal sketch that is used canvas2d.",
       "ogp_img": "ogp.jpg"
+    },
+    "xxx": {
+      "title": "sketch title",
+      "keywords": "",
+      "description": "sketch description",
+      "path": "/",
+      "ogp_description": "sketch ogp description",
+      "ogp_img": "ogp_xxx.jpg"
     }
   }
 }
