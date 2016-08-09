@@ -7,15 +7,13 @@ html(lang="ja")
     include ./modules/_head.pug
   body
     .c-page
-      .c-sketch-summry
-        h1.c-sketch-summry__head
-          |#{sketch.title}
-        p.c-sketch-summry__description
-          |#{sketch.description}
-        .c-sketch-summry__about-website
-          h2.c-sketch-summry__sub-head
-            |sketch of canvas2D
-          p.c-sketch-summry__view-source
+      .p-introduction
+        .p-introduction__wrap
+          h1.p-introduction__head
+            |Sketch of Canvas2D
+          p.cp-introduction__description
+            |#{sketch.description}
+          p.p-introduction__view-source
             a(href="https://github.com/ykob/sketch-canvas2d")
               |view source
       .c-stage
