@@ -1,0 +1,13 @@
+html {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+  perspective: 500px;
+  min-height: 100%;
+  font-family: $font-jp;
+  background-color: #222;
+}
+::selection {
+  background: rgba(0, 0, 0, 0.5);
+}

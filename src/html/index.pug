@@ -1,0 +1,33 @@
+-
+  var sketch = sketches.index;
+
+doctype html
+html(lang="ja")
+  head
+    include ./modules/_head.pug
+  body
+    .c-page
+      .p-introduction
+        .p-introduction__wrap
+          h1.p-introduction__head
+            |Sketch of Canvas2D
+          p.p-introduction__description
+            |#{sketch.description}
+          p.p-introduction__view-source
+            a(href="https://github.com/ykob/sketch-canvas2d").c-text-link
+              |view source
+      .c-stage
+        canvas.c-stage__canvas
+    .c-menu
+      .c-menu__list
+        ul.c-menu__list-wrap
+          each item, key in sketches
+            if (key != "index")
+              li.c-menu__list-item
+                a(href = '.' + item.path)
+                  |#{item.title}
+      .c-menu__btn
+        .c-menu__btn-line.c-menu__btn-line--top
+        .c-menu__btn-line.c-menu__btn-line--middle
+        .c-menu__btn-line.c-menu__btn-line--bottom
+    include ./modules/_script.pug
