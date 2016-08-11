@@ -4,17 +4,36 @@
   z-index: 1000;
   pointer-events: none;
   &__list {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px 0;
+    &-wrap {
+      margin: 0;
+      padding: 10vw 4vw;
+    }
+    &-item {
+      display: block;
+      margin: 0 0 1.5em;
+      letter-spacing: 2px;
+      @include l-mobile {
+        @include fontSize(13);
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
   &__btn {
     width: 30px;
     height: 30px;
     cursor: pointer;
     position: absolute;
-    top: 3vw; left: 3vw;
+    top: 4vw; left: 4vw;
     z-index: 2;
     pointer-events: auto;
     &-line {
@@ -35,7 +54,15 @@
   //  Interaction Init
   //
   &__list {
-    height: 0;
+    opacity: 0;
+    transition: 0.4s;
+    &-item {
+      opacity: 0;
+      transform: translate3d(2.2rem, 0, 0);
+      @include l-mobile {
+        transform: translate3d(1rem, 0, 0);
+      }
+    }
   }
   &__btn {
     perspective: none;
@@ -46,6 +73,25 @@
   //
   //  Interaction Init
   //
+  &__list {
+    &.menu-opened {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    &.menu-opened & {
+      &-item {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition-duration: 1.6s;
+        transition-timing-function: $easeOutExpo;
+        @for $i from 0 through 20 {
+          &:nth-child(#{$i}) {
+            transition-delay: #{$i / 18}s;
+          }
+        }
+      }
+    }
+  }
   &__btn {
     &.menu-opened & {
       &-line {
