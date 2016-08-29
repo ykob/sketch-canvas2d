@@ -1,29 +1,56 @@
-.c-sketch-summry {
+.c-sketch-summary {
   line-height: 1;
   position: absolute;
   bottom: 4vw; left: 4vw;
   z-index: 100;
   &__head {
     margin: 0;
-    @include fontSize(40);
     font-weight: 400;
+    letter-spacing: 2px;
+    @include l-pc-l {
+      font-size: $break-point-pc / 100 * 5;
+    }
+    @include l-pc-and-tablet {
+      font-size: 5vw;
+    }
+    @include l-mobile {
+      font-size: $break-point-mobile / 100 * 5;
+    }
   }
   &__description {
     margin: 1rem 0 0;
+    letter-spacing: 2px;
+    @include l-pc-l {
+      font-size: $break-point-pc / 100 * 1.6;
+    }
+    @include l-pc-and-tablet {
+      font-size: 1.6vw;
+    }
+    @include l-mobile {
+      font-size: $break-point-mobile / 100 * 1.6;
+    }
   }
   &__about-website {
     margin-top: 1.5rem;
-    @include fontSize(12);
+    letter-spacing: 2px;
+    @include l-pc-l {
+      font-size: $break-point-pc / 100;
+    }
+    @include l-pc-and-tablet {
+      font-size: 1vw;
+    }
+    @include l-mobile {
+      font-size: $break-point-mobile / 100;
+    }
   }
   &__sub-head {
     display: inline-block;
     margin: 0;
-    @include fontSize(12);
     font-weight: 400;
+    font-size: 100%;
   }
   &__view-source {
     display: inline-block;
-    margin: 0 0 0 0.2rem;
-    @include fontSize(12);
+    margin: 0 0 0 1em;
   }
 }
